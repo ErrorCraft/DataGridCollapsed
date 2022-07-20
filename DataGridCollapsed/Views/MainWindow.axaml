@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DataGridCollapsed.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:c="using:DataGridCollapsed.Controls"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="DataGridCollapsed.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="DataGridCollapsed">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid RowDefinitions="auto, *" ColumnDefinitions="auto, *">
+		<c:BorderedPanel>
+			<TextBlock Text="Commands" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 10"></TextBlock>
+			<DataGrid Items="{Binding Commands}">
+				<DataGrid.Columns>
+					<DataGridTextColumn Binding="{Binding Name}">
+						<DataGridTextColumn.Header>
+							<TextBlock Text="Command" FontWeight="Bold"></TextBlock>
+						</DataGridTextColumn.Header>
+					</DataGridTextColumn>
+					<DataGridTextColumn Binding="{Binding Count}">
+						<DataGridTextColumn.Header>
+							<TextBlock Text="Times Used" FontWeight="Bold"></TextBlock>
+						</DataGridTextColumn.Header>
+					</DataGridTextColumn>
+					<DataGridTextColumn Binding="{Binding ExecuteCount}">
+						<DataGridTextColumn.Header>
+							<TextBlock Text="In execute" FontWeight="Bold"></TextBlock>
+						</DataGridTextColumn.Header>
+					</DataGridTextColumn>
+				</DataGrid.Columns>
+			</DataGrid>
+		</c:BorderedPanel>
+	</Grid>
+</Window>

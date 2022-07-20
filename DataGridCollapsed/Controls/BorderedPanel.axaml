@@ -1,0 +1,19 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:DataGridCollapsed.Controls">
+	<Design.PreviewWith>
+		<controls:BorderedPanel>
+			<TextBlock Text="Text"></TextBlock>
+		</controls:BorderedPanel>
+	</Design.PreviewWith>
+
+	<Style Selector="controls|BorderedPanel">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border BorderBrush="Black" BorderThickness="1" Padding="15 20">
+					<ItemsPresenter Items="{TemplateBinding Items}"></ItemsPresenter>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>
